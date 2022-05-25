@@ -1,0 +1,5 @@
+<form [formGroup]="videoName" (ngSubmit)="changeVideo()">
+  <input formControlName="video" />
+  <input type="submit" value="Go" />
+</form>
+<audio id="youtube" #myAudio autoplay controls loop></audio>
