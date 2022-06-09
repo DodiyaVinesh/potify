@@ -1,0 +1,15 @@
+.home-container {
+  display: flex;
+}
+/* .main-content {
+  max-width: calc(100% - 160px);
+  flex: 0 1 calc(100% - 160px);
+  padding: 2vw 0;
+} */
+
+/*  when sidebar commented  */
+.main-content {
+  width: 100%;
+  flex: 0 1 100%;
+  padding: 2vw 0;
+}

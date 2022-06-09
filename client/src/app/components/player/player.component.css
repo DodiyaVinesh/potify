@@ -1,0 +1,119 @@
+.player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: max(5vw, 90px);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  color: white;
+  background-color: #000000;
+  background-image: linear-gradient(
+    147deg,
+    #2f5d7c 0%,
+    #093450 50%,
+    #000000 74%
+  );
+}
+
+.song-img {
+  margin: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.song-data {
+  padding: 15px 0;
+  padding-left: 20px;
+  flex: 0 1 calc(100% - 290px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  .song-data {
+    padding-left: 0;
+    flex: 0 1 calc(100% - 190px);
+  }
+}
+.song-data .song-name {
+  font-weight: bold;
+  white-space: nowrap;
+  animation: songName 10s linear infinite;
+  animation-play-state: paused;
+}
+@keyframes songName {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-120%);
+    display: none;
+  }
+  51% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.song-data .stat {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.8em;
+  display: flex;
+}
+.song-data .stat .ago {
+  margin-left: 1em;
+}
+
+.controls {
+  flex: 0 0 200px;
+  width: 200px;
+}
+@media screen and (max-width: 600px) {
+  .controls {
+    flex: 0 0 100px;
+    width: 100px;
+  }
+}
+
+.btns {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btns div {
+  transform: scale(1.5);
+}
+
+.song-progress {
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress {
+  flex: 1 1 100%;
+  background: #fff;
+  margin: 0 10px;
+  border-radius: 8px;
+  height: 7px;
+  width: 100%;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+}
+
+.progress::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #434343;
+}

@@ -1,0 +1,42 @@
+.song-container {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.548);
+}
+.song-img {
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.song-data {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  flex: 0 1 auto;
+  max-width: calc(100% - 90px);
+}
+@media screen and (max-width: 600px) {
+  .song-data {
+    padding: 15px 3px;
+  }
+}
+.song-data .song-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.song-data .stat {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.8em;
+  display: flex;
+}
+
+.song-data .stat .views,
+.song-data .stat .ago {
+  margin-left: 12px;
+}

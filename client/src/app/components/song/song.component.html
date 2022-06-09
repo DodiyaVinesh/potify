@@ -1,0 +1,18 @@
+<div class="song-container" (click)="changeSong(song)">
+  <img class="song-img" [src]="song.image" [alt]="song.title" />
+  <div class="song-data">
+    <div class="song-name">
+      {{ song.title }}
+    </div>
+    <div class="stat">
+      <div class="timestamp">
+        {{ song.seconds | secToHMS }}
+      </div>
+      <div class="views">
+        <fa-icon [icon]="faChartSimple"></fa-icon>
+        {{ song.views }}
+      </div>
+      <div class="ago"><fa-icon [icon]="faClock"></fa-icon> {{ song.ago }}</div>
+    </div>
+  </div>
+</div>

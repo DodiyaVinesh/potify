@@ -1,0 +1,15 @@
+<header>
+  <div class="brand">Youtube Audio Player</div>
+  <form (ngSubmit)="search()" class="search">
+    <input
+      type="text"
+      name="search"
+      id="search"
+      placeholder="Search anything..."
+      [formControl]="searchInp"
+    />
+  </form>
+  <div class="voice-search">
+    <fa-icon [icon]="faCoffee"></fa-icon>
+  </div>
+</header>

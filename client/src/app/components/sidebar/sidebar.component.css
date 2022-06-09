@@ -1,0 +1,20 @@
+.sidebar-container {
+  width: 160px;
+  background-color: #eee;
+  box-shadow: 1px 0 1px 1px #0006;
+  height: calc(100vh - min(70px, 6vw));
+}
+.sidebar-item:first-child {
+  display: flex;
+  justify-content: flex-end;
+}
+.sidebar-btn {
+  padding: 5px;
+}
+.sidebar-btn {
+  transform: scale(1.4);
+}
+.sidebar-item {
+  padding: 10px;
+  box-shadow: 0 1px 1px #0002;
+}

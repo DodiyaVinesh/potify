@@ -1,0 +1,61 @@
+<div *ngIf="song" class="player-container">
+  <img class="song-img" [src]="song.image" [alt]="song.title" />
+  <div class="song-data">
+    <div class="song-name">
+      {{ song.title }}
+    </div>
+    <div class="stat">
+      <div class="views">
+        <fa-icon [icon]="faChartSimple"></fa-icon>
+        {{ song.views }}
+      </div>
+
+      <div class="ago"><fa-icon [icon]="faClock"></fa-icon> {{ song.ago }}</div>
+    </div>
+    <div class="song-progress">
+      <div class="currenttime">{{ currentTimeStamp | secToHMS }}</div>
+      <input
+        #progressEl
+        type="range"
+        [value]="progressBar"
+        min="0"
+        max="100"
+        step="1"
+        class="progress"
+        (input)="seekTo($event)"
+      />
+      <div class="totaltime">
+        {{ song.seconds | secToHMS }}
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="btns">
+      <div class="prev">
+        <fa-icon [icon]="faBackwardStep" (click)="seekFixed(false)"></fa-icon>
+      </div>
+      <div *ngIf="!isPlaying" class="pause-play">
+        <fa-icon [icon]="faPlay" (click)="play()"></fa-icon>
+      </div>
+      <div *ngIf="isPlaying" class="pause-play">
+        <fa-icon [icon]="faPause" (click)="pause()"></fa-icon>
+      </div>
+      <div class="next">
+        <fa-icon [icon]="faForwardStep" (click)="seekFixed(true)"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <!-- actual iframe son -->
+  <youtube-player
+    style="display: none"
+    [videoId]="song.videoId"
+    suggestedQuality="small"
+    [height]="250"
+    [width]="400"
+    [startSeconds]="179"
+    [endSeconds]=""
+    [playerVars]="config"
+    #songEl
+  >
+  </youtube-player>
+</div>
