@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class PlayerService {
 
   searchSongs(query) {
     this.http
-      .get('http://localhost:5000/search', { params: { query } })
+      .get(`${environment.server_url}search`, { params: { query } })
       .subscribe((data: any) => {
         this.allSongs.next(data.data);
         this.currentSong.next(data.data[0]);
